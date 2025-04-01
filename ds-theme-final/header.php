@@ -23,7 +23,7 @@
                         ?>
                     </div>
                     <div class="searchbox">
-                        <?php get_search_form();?>
+                        Search
                     </div>                    
                 </div>
             </section>
