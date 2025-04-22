@@ -1,30 +1,23 @@
 <?php get_header(); ?>
 
-<div class="primary">
-    <div class="main">
+<div id="primary">
+    <div id="main">
         <div class="container">
-            <?php
+
+        <h3>Search results for: <?php echo get_search_query(); ?></h3>
+
+            <?php 
+
+            get_search_form();
+
             while( have_posts() ):
                 the_post();
-                ?>
-                <article>
-                    <header>
-                    <h3><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h3>
-                        <h2><?php the_title(); ?></h2>
-                        <div class="meta-info">
-                            <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link();?></p>
-                            <p>Catgeries: <?php the_category( ' ' ); ?> </p>
-                            <p> <?php the_tags('', ', '); ?></p>
-                        </div>
-                    </header>
-                    <div class="content">
-                        <?php the_exerpt(); ?>
-                    </div>
-                </article>
-            <?php
+                get_template_part('parts/content', 'search');
             endwhile;
+            the_posts_pagination();
             ?>
         </div>
     </div>
 </div>
+
 <?php get_footer(); ?> 

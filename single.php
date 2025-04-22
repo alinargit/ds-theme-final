@@ -6,20 +6,18 @@
             <?php
             while( have_posts() ):
                 the_post();
+                get_template_part('parts/content', 'single');
                 ?>
-                <article>
-                    <header>
-                        <h1><?php the_title(); ?></h1>
-                        <div class="meta-info">
-                            <p>Posted in <?php echo get_the_date(); ?> by <?php the_author_posts_link();?></p>
-                            <p>Catgeries: <?php the_category( ' ' ); ?> </p>
-                            <p> <?php the_tags('', ', '); ?></p>
-                        </div>
-                    </header>
-                    <div class="content">
-                        <?php the_content(); ?>
-                    </div>
-                </article>
+                
+                <div class="pages new">
+                <div class="wpdevs-paginations">
+                                        <div class="pages next">
+                                            <?php previous_post_link("&laquo, %link"); ?>
+                                        </div>
+                                        <div class="pages previous">
+                                            <?php next_post_link("%link, &raquol"); ?>
+                                        </div>
+                                    </div>
             <?php
             if(comments_open() || get_comments_number()){
                 comments_template();

@@ -7,6 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+    <?php wp_body_open();?>
     <div id="page" class="site">
         <header>
             <section class="top-bar">
@@ -17,7 +18,7 @@
                             the_custom_logo();
                         }else{
                             ?>
-                                <a href="<?php echo home_url( '/' ) ?>" <span><?php bloginfo( 'name' );?></span></a>
+                                <a href="<?php echo home_url( '/' ); ?>"> <span><?php bloginfo( 'name' );?></span></a>
                             <?php
                         }
                         ?>
@@ -27,6 +28,8 @@
                     </div>                    
                 </div>
             </section>
+            <?php
+            if ( !is_page('landing-page')):?>
             <section class="menu-area">
                 <div class="container">
                     <nav class="main-menu">
@@ -41,4 +44,5 @@
                     </nav>                    
                 </div>
             </section>
+            <?php endif;?>
         </header>
