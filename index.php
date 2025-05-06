@@ -5,7 +5,7 @@
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
-                    <h1>Blog</h1>
+                    <h1><?php esc_html_e('Blog', 'wp-devs')?></h1>
                     <div class="container">
                         <div class="blog-items">
                             <?php 
@@ -26,7 +26,7 @@
 
                                     <?php
                                 else: ?>
-                                    <p>Nothing yet to be displayed!</p>
+                                    <p><?php esc_htm;_e('Nothing yet to be displayed!', 'wp-devs')?></p>
                             <?php endif; ?>                                
                         </div>
                         <?php get_sidebar(); ?>

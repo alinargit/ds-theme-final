@@ -5,20 +5,21 @@
                     <div class="container">
                         <div class="error_404">
                             <header>
-                                <h1>Page not found</h1>
-                                <p>Unfortunately, the page you tried to reach does not exist on this site</p>
+                                <h1><?php esc_html_e('Page not found', 'wp-devs')?></h1>
+                                <p><?php esc_html_e('Unfortunately, the page you tried to reach does not exist on this site', 'wp-devs')?></p>
                         </header>
                         <div class="error">
-                            <p>How about doing a search?</p>
+                            <p><?php esc_html_e('How about doing a search?', 'wp-devs')?></p>
                             <?php get_search_form();?>
                             <?php
                             the_widget(
                                 'WP_Widget_Recent_Posts', 
                                 array(
-                                    'title' => 'Latest Posts',
+                                    'title' => esc_html_e('Latest Posts', 'wp-devs'),
                                     ;'number' => 3                               
                                      )
-                                );?>
+                                );
+                            ?>
                         </div>
                 </div>
             </div>

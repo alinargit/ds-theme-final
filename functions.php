@@ -12,10 +12,15 @@ add_action( 'wp_enqueue_scripts', 'wpdevs_load_scripts' );
 
 
 function dstheme_config(){
+
+    $textdomain = 'wp-devs';
+    load_theme_textdomain($textdomain, get_template_directory() . '/languages/');
+
+
     register_nav_menus(
         array(
-            'wp_devs_main_menu' => 'Main Menu',
-            'wp_devs_footer_menu' => 'Footer Menu'
+            'wp_devs_main_menu' => esc_html__('Main Menu', 'wp-devs'),
+            'wp_devs_footer_menu' => esc_html__('Footer Menu', 'wp-devs')
         )
     );
 
@@ -39,9 +44,9 @@ add_action('widgets_init', 'dstheme_sidebars');
 function dstheme_sidebars(){
     register_sidebar(
         array(
-            'name' => 'Blog Sidebar',
+            'name' => esc_html__('Blog Sidebar', 'wp-devs'),
             'id' => 'sidebar-blog',
-            'description' => 'This is the Blog Sidebar. You can add your widgets here.',
+            'description' => ecs_html__('This is the Blog Sidebar. You can add your widgets here.', 'wp-devs'),
             'before_widget' => '<div class = "widget-title">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class = "widget-title">',
@@ -50,9 +55,9 @@ function dstheme_sidebars(){
     );
     register_sidebar(
         array(
-            'name' => 'Service 1',
+            'name' =>esc_html__( 'Service 1', 'wp-devs'),
             'id' => 'sevices-1',
-            'description' => 'First service Area',
+            'description' => esc_html__('First service Area', 'wp-devs'),
             'before_widget' => '<div class = "widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class = "widget-title">',
@@ -61,9 +66,9 @@ function dstheme_sidebars(){
     );
     register_sidebar(
         array(
-            'name' => 'Service 2',
+            'name' => esc_html__('Service 2','wp-devs'),
             'id' => 'services-2',
-            'description' => 'Second Service Area',
+            'description' => esc_html__('Second Service Area','wp-devs'),
             'before_widget' => '<div class = "widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class = "widget-title">',
@@ -72,9 +77,9 @@ function dstheme_sidebars(){
     );
     register_sidebar(
         array(
-            'name' => 'Service 3',
+            'name' => esc_html__('Service 3', 'wp-devs'),
             'id' => 'services-3',
-            'description' => 'Third Service Area',
+            'description' => esc_html__('Third Service Area', 'wp-devs'),
             'before_widget' => '<div class = "widget-wrapper">',
             'after_widget' => '</div>',
             'before_title' => '<h4 class = "widget-title">',
